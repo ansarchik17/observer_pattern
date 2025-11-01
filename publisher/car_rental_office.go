@@ -17,8 +17,8 @@ func NewCarRentalOffice(name string) *CarRentalOffice {
 	}
 }
 
-func (o *CarRentalOffice) Register(sub subscriber.Subscriber) {
-	o.subscribers = append(o.subscribers, sub)
+func (office *CarRentalOffice) Register(sub subscriber.Subscriber) {
+	office.subscribers = append(office.subscribers, sub)
 }
 
 func (o *CarRentalOffice) NotifyAll(msg string) {

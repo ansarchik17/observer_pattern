@@ -3,6 +3,6 @@ package publisher
 import "assignment7_Observer/subscriber"
 
 type Publisher interface {
-	Register(sub subscriber.Subscriber)
+	Register(subscriber subscriber.Subscriber)
 	NotifyAll(msg string)
 }

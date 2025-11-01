@@ -11,10 +11,10 @@ func NewCustomer(id, name string) Customer {
 	return Customer{ID: id, Name: name}
 }
 
-func (c Customer) ReactToPublisherMsg(msg string) {
-	fmt.Printf("Customer %s (%s) received: %s\n", c.ID, c.Name, msg)
+func (customer Customer) ReactToPublisherMsg(msg string) {
+	fmt.Printf("Customer %s (%s) received: %s\n", customer.ID, customer.Name, msg)
 }
 
-func (c Customer) GetID() string {
-	return c.ID
+func (customer Customer) GetID() string {
+	return customer.ID
 }
