@@ -1,22 +1,21 @@
 package main
 
 import (
-	"assignment7_Observer/observer"
-	"assignment7_Observer/subject"
+	"assignment7_Observer/publisher"
+	"assignment7_Observer/subscriber"
 )
 
 func main() {
-	center := subject.NewCarRentalCenter("Toyota Camry")
+	office := publisher.NewCarRentalOffice("Astana Rental Car")
 
-	regularCustomer := observer.NewCustomer("C001", "John")
-	vipCustomer := observer.NewVIPCustomer("V001", "Sarah")
+	customer1 := subscriber.NewCustomer("1", "Ansar")
+	customer2 := subscriber.NewCustomer("2", "Aruzhan")
+	customer3 := subscriber.NewCustomer("3", "Dias")
 
-	center.Register(regularCustomer)
-	center.Register(vipCustomer)
+	office.Register(customer1)
+	office.Register(customer2)
+	office.Register(customer3)
 
-	center.UpdateAvailability()
-
-	center.Deregister(regularCustomer)
-	center.Deregister(vipCustomer)
-	//center.UpdateAvailability()
+	office.NotifyAll("!!!New Lexus RX 2024 is now available!")
+	office.NotifyAll("!!!Weekend discount: 20% off SUVs!")
 }
