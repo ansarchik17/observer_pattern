@@ -21,9 +21,9 @@ func (office *CarRentalOffice) Register(sub subscriber.Subscriber) {
 	office.subscribers = append(office.subscribers, sub)
 }
 
-func (o *CarRentalOffice) NotifyAll(msg string) {
-	fmt.Printf("\n [%s] Sending notification: \"%s\"\n", o.name, msg)
-	for _, sub := range o.subscribers {
+func (office *CarRentalOffice) NotifyAll(msg string) {
+	fmt.Printf("\n [%s] Sending notification: \"%s\"\n", office.name, msg)
+	for _, sub := range office.subscribers {
 		fmt.Println("Notifying:", sub.GetID())
 		sub.ReactToPublisherMsg(msg)
 	}
