@@ -11,8 +11,8 @@ func NewCustomer(id, name string) Customer {
 	return Customer{ID: id, Name: name}
 }
 
-func (customer Customer) ReactToPublisherMsg(msg string) {
-	fmt.Printf("Customer %s (%s) received: %s\n", customer.ID, customer.Name, msg)
+func (customer Customer) ReactToPublisherMsg(message string) {
+	fmt.Printf("Customer %s (%s) received: %s\n", customer.ID, customer.Name, message)
 }
 
 func (customer Customer) GetID() string {

@@ -17,14 +17,14 @@ func NewCarRentalOffice(name string) *CarRentalOffice {
 	}
 }
 
-func (office *CarRentalOffice) Register(sub subscriber.Subscriber) {
-	office.subscribers = append(office.subscribers, sub)
+func (office *CarRentalOffice) Register(subscriber subscriber.Subscriber) {
+	office.subscribers = append(office.subscribers, subscriber)
 }
 
-func (office *CarRentalOffice) NotifyAll(msg string) {
-	fmt.Printf("\n [%s] Sending notification: \"%s\"\n", office.name, msg)
-	for _, sub := range office.subscribers {
-		fmt.Println("Notifying:", sub.GetID())
-		sub.ReactToPublisherMsg(msg)
+func (office *CarRentalOffice) NotifyAll(message string) {
+	fmt.Printf("\n [%s] Sending notification: \"%s\"\n", office.name, message)
+	for _, subscriber := range office.subscribers {
+		fmt.Println("Notifying:", subscriber.GetID())
+		subscriber.ReactToPublisherMsg(message)
 	}
 }
