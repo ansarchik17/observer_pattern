@@ -19,5 +19,5 @@ func main() {
 	office.Register(customer4)
 
 	office.NotifyAll("!!!New Lexus RX 2024 is now available!")
-	office.NotifyAll("!!!Weekend discount: 20% off SUVs!")
+	office.NotifyAll("!!!Weekend discount: 20% off")
 }
